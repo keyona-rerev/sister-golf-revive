@@ -11,10 +11,17 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FounderRouteImport } from './routes/founder'
+import { Route as FounderMessageRouteImport } from './routes/founder-message'
+import { Route as MailchimpSignupRouteImport } from './routes/mailchimp-signup'
 import { Route as WorkshopsRouteImport } from './routes/workshops'
+import { Route as CategoryGolfTipsRouteImport } from './routes/category.golf-tips'
+import { Route as GolfTipsSlugRouteImport } from './routes/golf-tips.$slug'
+import { Route as ServiceCategorySlugRouteImport } from './routes/service-category.$slug'
+import { Route as ServiceSlugRouteImport } from './routes/service.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -24,6 +31,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -41,59 +53,150 @@ const FounderRoute = FounderRouteImport.update({
   path: '/founder',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FounderMessageRoute = FounderMessageRouteImport.update({
+  id: '/founder-message',
+  path: '/founder-message',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MailchimpSignupRoute = MailchimpSignupRouteImport.update({
+  id: '/mailchimp-signup',
+  path: '/mailchimp-signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorkshopsRoute = WorkshopsRouteImport.update({
   id: '/workshops',
   path: '/workshops',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoryGolfTipsRoute = CategoryGolfTipsRouteImport.update({
+  id: '/category/golf-tips',
+  path: '/category/golf-tips',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GolfTipsSlugRoute = GolfTipsSlugRouteImport.update({
+  id: '/golf-tips/$slug',
+  path: '/golf-tips/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceCategorySlugRoute = ServiceCategorySlugRouteImport.update({
+  id: '/service-category/$slug',
+  path: '/service-category/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceSlugRoute = ServiceSlugRouteImport.update({
+  id: '/service/$slug',
+  path: '/service/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
+  '/founder-message': typeof FounderMessageRoute
+  '/mailchimp-signup': typeof MailchimpSignupRoute
   '/workshops': typeof WorkshopsRoute
+  '/category/golf-tips': typeof CategoryGolfTipsRoute
+  '/golf-tips/$slug': typeof GolfTipsSlugRoute
+  '/service-category/$slug': typeof ServiceCategorySlugRoute
+  '/service/$slug': typeof ServiceSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
+  '/founder-message': typeof FounderMessageRoute
+  '/mailchimp-signup': typeof MailchimpSignupRoute
   '/workshops': typeof WorkshopsRoute
+  '/category/golf-tips': typeof CategoryGolfTipsRoute
+  '/golf-tips/$slug': typeof GolfTipsSlugRoute
+  '/service-category/$slug': typeof ServiceCategorySlugRoute
+  '/service/$slug': typeof ServiceSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
+  '/founder-message': typeof FounderMessageRoute
+  '/mailchimp-signup': typeof MailchimpSignupRoute
   '/workshops': typeof WorkshopsRoute
+  '/category/golf-tips': typeof CategoryGolfTipsRoute
+  '/golf-tips/$slug': typeof GolfTipsSlugRoute
+  '/service-category/$slug': typeof ServiceCategorySlugRoute
+  '/service/$slug': typeof ServiceSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/blog' | '/contact' | '/founder' | '/workshops'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/about-us'
+    | '/blog'
+    | '/contact'
+    | '/founder'
+    | '/founder-message'
+    | '/mailchimp-signup'
+    | '/workshops'
+    | '/category/golf-tips'
+    | '/golf-tips/$slug'
+    | '/service-category/$slug'
+    | '/service/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/blog' | '/contact' | '/founder' | '/workshops'
+  to:
+    | '/'
+    | '/about'
+    | '/about-us'
+    | '/blog'
+    | '/contact'
+    | '/founder'
+    | '/founder-message'
+    | '/mailchimp-signup'
+    | '/workshops'
+    | '/category/golf-tips'
+    | '/golf-tips/$slug'
+    | '/service-category/$slug'
+    | '/service/$slug'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/about-us'
     | '/blog'
     | '/contact'
     | '/founder'
+    | '/founder-message'
+    | '/mailchimp-signup'
     | '/workshops'
+    | '/category/golf-tips'
+    | '/golf-tips/$slug'
+    | '/service-category/$slug'
+    | '/service/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AboutUsRoute: typeof AboutUsRoute
   BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
   FounderRoute: typeof FounderRoute
+  FounderMessageRoute: typeof FounderMessageRoute
+  MailchimpSignupRoute: typeof MailchimpSignupRoute
   WorkshopsRoute: typeof WorkshopsRoute
+  CategoryGolfTipsRoute: typeof CategoryGolfTipsRoute
+  GolfTipsSlugRoute: typeof GolfTipsSlugRoute
+  ServiceCategorySlugRoute: typeof ServiceCategorySlugRoute
+  ServiceSlugRoute: typeof ServiceSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -110,6 +213,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -133,11 +243,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FounderRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/founder-message': {
+      id: '/founder-message'
+      path: '/founder-message'
+      fullPath: '/founder-message'
+      preLoaderRoute: typeof FounderMessageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mailchimp-signup': {
+      id: '/mailchimp-signup'
+      path: '/mailchimp-signup'
+      fullPath: '/mailchimp-signup'
+      preLoaderRoute: typeof MailchimpSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/workshops': {
       id: '/workshops'
       path: '/workshops'
       fullPath: '/workshops'
       preLoaderRoute: typeof WorkshopsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/category/golf-tips': {
+      id: '/category/golf-tips'
+      path: '/category/golf-tips'
+      fullPath: '/category/golf-tips'
+      preLoaderRoute: typeof CategoryGolfTipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/golf-tips/$slug': {
+      id: '/golf-tips/$slug'
+      path: '/golf-tips/$slug'
+      fullPath: '/golf-tips/$slug'
+      preLoaderRoute: typeof GolfTipsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-category/$slug': {
+      id: '/service-category/$slug'
+      path: '/service-category/$slug'
+      fullPath: '/service-category/$slug'
+      preLoaderRoute: typeof ServiceCategorySlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service/$slug': {
+      id: '/service/$slug'
+      path: '/service/$slug'
+      fullPath: '/service/$slug'
+      preLoaderRoute: typeof ServiceSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -146,21 +298,18 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AboutUsRoute: AboutUsRoute,
   BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
   FounderRoute: FounderRoute,
+  FounderMessageRoute: FounderMessageRoute,
+  MailchimpSignupRoute: MailchimpSignupRoute,
   WorkshopsRoute: WorkshopsRoute,
+  CategoryGolfTipsRoute: CategoryGolfTipsRoute,
+  GolfTipsSlugRoute: GolfTipsSlugRoute,
+  ServiceCategorySlugRoute: ServiceCategorySlugRoute,
+  ServiceSlugRoute: ServiceSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

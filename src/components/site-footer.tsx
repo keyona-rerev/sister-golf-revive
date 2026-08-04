@@ -19,7 +19,7 @@ export function SiteFooter() {
           <h3 className="eyebrow text-fairway-foreground/60">Explore</h3>
           <ul className="mt-4 space-y-2.5 text-sm">
             <li>
-              <Link to="/about" className="hover:text-accent">
+              <Link to="/about-us" className="hover:text-accent">
                 About
               </Link>
             </li>
@@ -29,12 +29,12 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link to="/founder" className="hover:text-accent">
+              <Link to="/founder-message" className="hover:text-accent">
                 Founder
               </Link>
             </li>
             <li>
-              <Link to="/blog" className="hover:text-accent">
+              <Link to="/category/golf-tips" className="hover:text-accent">
                 Blog
               </Link>
             </li>
