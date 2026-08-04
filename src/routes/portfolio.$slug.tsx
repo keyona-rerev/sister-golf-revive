@@ -1,6 +1,6 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { PageHero, SectionHeading } from "../components/section";
-import { programBySlug, programs } from "../lib/pages-content";
+import { programBySlug, programs, type Program } from "../lib/pages-content";
 
 export const Route = createFileRoute("/portfolio/$slug")({
   loader: ({ params }) => {
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/portfolio/$slug")({
 });
 
 function ProgramPage() {
-  const program = Route.useLoaderData();
+  const program = Route.useLoaderData() as Program;
 
   return (
     <>
