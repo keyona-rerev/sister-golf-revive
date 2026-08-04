@@ -1,14 +1,19 @@
 import { Link } from "@tanstack/react-router";
+import logoAsset from "../assets/sistergolf-logo.png.asset.json";
 
 export function SiteFooter() {
   return (
     <footer className="bg-fairway-deep text-fairway-foreground">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <div className="flex items-baseline gap-1.5">
-            <span className="font-display text-2xl leading-none">Sister</span>
-            <span className="font-display text-2xl leading-none text-accent">Golf</span>
-          </div>
+          <img
+            src={logoAsset.url}
+            alt="SisterGolf"
+            className="h-14 w-auto rounded-sm bg-background p-2"
+            width={154}
+            height={56}
+          />
+        </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-fairway-foreground/70">
             Teaching women business professionals how to use golf as a tool for building
             relationships, closing deals and advancing their careers.

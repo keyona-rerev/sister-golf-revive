@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import logoAsset from "../assets/sistergolf-logo.png.asset.json";
 
 type NavChild = { label: string; to?: string; href?: string };
 type NavItem = { label: string; to?: string; href?: string; children?: NavChild[] };
