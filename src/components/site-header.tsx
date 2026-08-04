@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import logoAsset from "../assets/sistergolf-logo.png.asset.json";
 
 type NavChild = { label: string; to?: string; href?: string };
 type NavItem = { label: string; to?: string; href?: string; children?: NavChild[] };
@@ -120,13 +121,14 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4">
-        <Link to="/" className="flex items-baseline gap-1.5" onClick={close}>
-          <span className="font-display text-2xl leading-none tracking-tight text-fairway">
-            Sister
-          </span>
-          <span className="font-display text-2xl leading-none tracking-tight text-accent">
-            Golf
-          </span>
+        <Link to="/" className="flex items-center" onClick={close}>
+          <img
+            src={logoAsset.url}
+            alt="SisterGolf"
+            className="h-12 w-auto"
+            width={132}
+            height={48}
+          />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">
