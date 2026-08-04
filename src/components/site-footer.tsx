@@ -13,7 +13,6 @@ export function SiteFooter() {
             width={154}
             height={56}
           />
-        </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-fairway-foreground/70">
             Teaching women business professionals how to use golf as a tool for building
             relationships, closing deals and advancing their careers.
