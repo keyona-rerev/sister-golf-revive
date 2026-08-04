@@ -3,10 +3,10 @@ import { useState } from "react";
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
+  { to: "/about-us", label: "About Us" },
   { to: "/workshops", label: "Workshops" },
-  { to: "/founder", label: "Founder" },
-  { to: "/blog", label: "Blog" },
+  { to: "/founder-message", label: "Founder" },
+  { to: "/category/golf-tips", label: "Golf Tips" },
 ] as const;
 
 export function SiteHeader() {
