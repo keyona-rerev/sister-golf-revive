@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PostCard, ServiceCard } from "../components/cards";
+import { HeroCarousel } from "../components/hero-carousel";
 import { SectionHeading } from "../components/section";
 import { books, images, links, posts, services } from "../lib/site-content";
 
@@ -34,13 +35,15 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <>
+      <HeroCarousel />
+
       <section className="border-b border-border bg-sand">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="rise-in">
             <p className="eyebrow text-accent">About Us</p>
-            <h1 className="mt-4 text-4xl leading-[1.06] text-fairway-deep sm:text-5xl">
+            <h2 className="mt-4 text-4xl leading-[1.06] text-fairway-deep sm:text-5xl">
               We Teach Women How To Play Golf To Achieve Business Success
-            </h1>
+            </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               SisterGolf teaches women business professionals how they can use golf as a
               tool for developing mutually beneficial business relationships, and creating
@@ -49,13 +52,13 @@ function HomePage() {
 
             <div className="mt-10 grid gap-8 sm:grid-cols-2">
               <div className="border-t border-border pt-5">
-                <h2 className="text-xl text-fairway-deep">Build Relationships</h2>
+                <h3 className="text-xl text-fairway-deep">Build Relationships</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   Close more deals and get promoted.
                 </p>
               </div>
               <div className="border-t border-border pt-5">
-                <h2 className="text-xl text-fairway-deep">Make Connections</h2>
+                <h3 className="text-xl text-fairway-deep">Make Connections</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   Play golf to achieve business and career success.
                 </p>
