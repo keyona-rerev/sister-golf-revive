@@ -704,12 +704,6 @@ function MembershipPreview() {
     <div className="sgp">
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
       <div style={{ maxWidth: 1400, margin: "0 auto", padding: "24px 16px" }}>
-        <div className="notice">
-          <strong>Internal preview.</strong> This is a working replica of the current membership
-          portal, built so the experience can be reviewed before it is rebuilt in-house. It is not a
-          live member login and no real member data is shown.
-        </div>
-
         <div className="app">
           <nav className="rail" aria-label="Workspaces">
             <button className="rail-btn active" onClick={() => { setChannel("home"); setTab("Discussion"); }} aria-label="Home">
