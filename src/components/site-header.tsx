@@ -57,7 +57,7 @@ const nav: NavItem[] = [
     children: [
       { label: "Membership Overview", to: "/sistergolf-membership" },
       { label: "Join SisterGolf", href: "https://sg-membership.vibepreview.com/" },
-      { label: "Membership Portal", href: "https://sistergolf.app.clientclub.net/login" },
+      { label: "Membership Portal", to: "/membership-preview" },
     ],
   },
   { label: "Contact Us", to: "/contact" },
