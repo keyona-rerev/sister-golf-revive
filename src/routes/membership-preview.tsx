@@ -485,6 +485,7 @@ const MEMBERS = [
 const SETTINGS_NAV = ["Details", "Subscriptions", "Newsletter", "Branding", "Themes", "Show / Hide Tabs", "Membership Questions", "Gamification & Rewards", "Links", "Reported Content", "Import", "Discovery"];
 
 function MembershipPreview() {
+  const [stage, setStage] = useState<"login" | "hub" | "app">("login");
   const [channel, setChannel] = useState("home");
   const [tab, setTab] = useState("Discussion");
   const [overlay, setOverlay] = useState<string | null>(null);
@@ -719,6 +720,91 @@ function MembershipPreview() {
           )) : <div className="empty"><Kite /><h3>No members found</h3></div>}
         </div>
       </>
+    );
+  }
+
+  if (stage === "login") {
+    return (
+      <div className="sgp">
+        <style dangerouslySetInnerHTML={{ __html: CSS }} />
+        <div className="login-wrap">
+          <div className="login">
+            <h1>Login</h1>
+            <button className="goog">
+              <svg width="22" height="22" viewBox="0 0 48 48">
+                <path fill="#4285F4" d="M45 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12c-.2 2-1.5 5-4.4 7l6.7 5.2c4-3.7 6.7-9.1 6.7-15.5z" />
+                <path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-6.9-5.4c-1.9 1.3-4.4 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.800000000000001l-7.1 5.5C7.9 40.6 15.4 46 24 46z" />
+                <path fill="#FBBC05" d="M11.5 27.7c-.5-1.4-.7-2.9-.7-4.4s.3-3 .7-4.4l-7.1-5.5C2.9 16.3 2 19.9 2 23.7s.9 7.4 2.4 10.5l7.1-6.5z" />
+                <path fill="#EA4335" d="M24 9.6c3.3 0 5.5 1.4 6.8 2.6l5.9-5.8C33 3 28.9 1 24 1 15.4 1 7.9 6.4 4.4 13.4l7.1 5.5C13.3 13.4 18.2 9.6 24 9.6z" />
+              </svg>
+              Continue with Google
+            </button>
+            <div className="divider">Or, sign in with your email</div>
+            <div className="lfield">
+              <Ic d={D.mail} s={20} />
+              <input defaultValue="shella@sistergolf.com" aria-label="Email" />
+            </div>
+            <div className="lfield">
+              <Ic d={D.lock} s={20} />
+              <input type="password" defaultValue="Membership2026!" aria-label="Password" />
+            </div>
+            <button className="forgot">Forgot password?</button>
+            <button className="b-login" onClick={() => setStage("hub")}>Login</button>
+            <button className="b-secure" onClick={() => setStage("hub")}>Login with secure code</button>
+            <div className="newuser">New user? <button>Sign up</button></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (stage === "hub") {
+    return (
+      <div className="sgp">
+        <style dangerouslySetInnerHTML={{ __html: CSS }} />
+        <div style={{ maxWidth: 1500, margin: "0 auto", padding: "24px 16px" }}>
+          <div className="hub">
+            <aside className="hub-side">
+              <div className="hub-logo"><span /></div>
+              <h2>SisterGolf Members</h2>
+              <button className="hub-join">
+                <Ic d={D.home} s={24} />
+                Join a Group
+                <span className="arw"><Ic d={D.chevR} s={22} /></span>
+              </button>
+            </aside>
+            <div className="hub-main">
+              <div className="hub-hi">Hi, Shella Sylla</div>
+              <h1>Welcome to SisterGolf Members</h1>
+              <div className="hub-grid">
+                <div className="hub-card">
+                  <div className="hub-card-head">
+                    <h3>Recently opened</h3>
+                    <button>View all Groups</button>
+                  </div>
+                  <button className="grp-card" onClick={() => setStage("app")}>
+                    <div className="grp-cover" />
+                    <p>Sistergolf Membership</p>
+                  </button>
+                </div>
+                <div className="hub-card">
+                  <div className="hub-card-head">
+                    <h3>Shared Files</h3>
+                    <button>+ Add Files</button>
+                  </div>
+                  <div className="hub-empty">
+                    <svg width="120" height="96" viewBox="0 0 120 96" fill="none">
+                      <path d="M8 20a6 6 0 0 1 6-6h28l10 10h54a6 6 0 0 1 6 6v46a6 6 0 0 1-6 6H14a6 6 0 0 1-6-6z" fill="#8AB4F8" />
+                      <path d="M8 34h104v36a6 6 0 0 1-6 6H14a6 6 0 0 1-6-6z" fill="#AECBFA" />
+                    </svg>
+                    <p>You don&apos;t have any!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 
