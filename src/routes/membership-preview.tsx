@@ -258,6 +258,44 @@ const CSS = `
 @media (max-width:1080px){.sgp .grid{grid-template-columns:minmax(0,1fr)}.sgp .sidebar{width:212px}}
 @media (max-width:760px){.sgp .rail,.sgp .sidebar{display:none}.sgp .content{padding:16px}
  .sgp .pthumb{width:88px;height:66px}.sgp .ws{display:none}.sgp .ogrid,.sgp .swrap{grid-template-columns:1fr}}
+.sgp .login-wrap{min-height:calc(100vh - 90px);display:flex;align-items:flex-start;justify-content:center;padding:70px 20px;background:#fff}
+.sgp .login{width:100%;max-width:520px}
+.sgp .login h1{font-size:44px;font-weight:600;letter-spacing:-.02em;margin-bottom:38px}
+.sgp .goog{width:100%;display:flex;align-items:center;justify-content:center;gap:12px;padding:15px;border:1px solid #DCDCE0;border-radius:8px;background:#fff;font-size:17px;color:#3F3F46;cursor:pointer}
+.sgp .goog:hover{background:#FAFAFA}
+.sgp .divider{display:flex;align-items:center;gap:14px;margin:26px 0;color:#6B7280;font-size:15px}
+.sgp .divider::before,.sgp .divider::after{content:"";flex:1;height:1px;background:var(--line)}
+.sgp .lfield{display:flex;align-items:center;gap:14px;border:1px solid #DCDCE0;border-radius:8px;padding:15px 18px;margin-bottom:14px;color:#9CA3AF;background:#fff}
+.sgp .lfield input{border:none;outline:none;font-family:inherit;font-size:16.5px;width:100%;color:var(--ink)}
+.sgp .forgot{display:block;text-align:right;color:#2C6ECB;font-size:15px;margin:0 0 20px auto;background:none;border:none;cursor:pointer;font-family:inherit}
+.sgp .b-login{width:100%;padding:16px;border:none;border-radius:8px;background:#1DA75A;color:#fff;font-size:17px;font-weight:600;cursor:pointer;margin-bottom:14px}
+.sgp .b-login:hover{background:#17904D}
+.sgp .b-secure{width:100%;padding:15px;border:1px solid #DCDCE0;border-radius:8px;background:#fff;font-size:16px;color:#3F3F46;cursor:pointer;margin-bottom:22px;font-family:inherit}
+.sgp .newuser{text-align:center;font-size:16px;color:#3F3F46}
+.sgp .newuser button{background:none;border:none;color:#2C6ECB;font-size:16px;cursor:pointer;font-family:inherit}
+.sgp .hub{display:flex;min-height:calc(100vh - 90px);background:#fff;border:1px solid var(--line)}
+.sgp .hub-side{width:372px;flex-shrink:0;border-right:1px solid var(--line);padding:40px 30px}
+.sgp .hub-logo{width:134px;height:134px;border-radius:50%;background:#EDE7FA;margin:0 auto;display:grid;place-items:center}
+.sgp .hub-logo span{width:62px;height:62px;border-radius:14px;background:#7C5CD6;transform:rotate(-12deg)}
+.sgp .hub-side h2{font-size:34px;font-weight:600;letter-spacing:-.02em;margin-top:34px;line-height:1.15}
+.sgp .hub-join{display:flex;align-items:center;gap:16px;padding:26px 0;margin-top:34px;border:none;border-top:1px solid var(--line);font-size:19px;color:#3F3F46;background:none;width:100%;cursor:pointer;font-family:inherit}
+.sgp .hub-join .arw{margin-left:auto;color:#3F3F46}
+.sgp .hub-main{flex:1;padding:44px 46px;min-width:0}
+.sgp .hub-hi{font-size:17px;color:#6B7280}
+.sgp .hub-main h1{font-size:38px;font-weight:600;letter-spacing:-.02em;margin:8px 0 32px}
+.sgp .hub-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.sgp .hub-card{border:1px solid var(--line);border-radius:14px;padding:26px}
+.sgp .hub-card-head{display:flex;align-items:center;margin-bottom:24px}
+.sgp .hub-card-head h3{font-size:23px;font-weight:600;letter-spacing:-.01em}
+.sgp .hub-card-head button{margin-left:auto;background:none;border:none;color:#2C6ECB;font-size:16px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:7px}
+.sgp .grp-card{border:1px solid var(--line);border-radius:10px;overflow:hidden;width:100%;max-width:390px;background:none;padding:0;cursor:pointer;text-align:left;font-family:inherit}
+.sgp .grp-card:hover{box-shadow:0 3px 14px rgba(0,0,0,.09)}
+.sgp .grp-cover{height:150px;background:linear-gradient(150deg,#8FC45C,#4E7A32);position:relative}
+.sgp .grp-cover::after{content:"";position:absolute;right:34px;top:50%;transform:translateY(-50%);width:78px;height:78px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.sgp .grp-card p{padding:16px;font-size:15px;font-weight:600}
+.sgp .hub-empty{display:grid;place-items:center;padding:34px 10px;gap:18px}
+.sgp .hub-empty p{font-size:16px;color:#6B7280}
+@media (max-width:980px){.sgp .hub{flex-direction:column}.sgp .hub-side{width:100%;border-right:none;border-bottom:1px solid var(--line)}.sgp .hub-grid{grid-template-columns:1fr}}
 `;
 
 const D = {
